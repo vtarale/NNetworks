@@ -37,6 +37,19 @@ class Vector:
     def div(self, vector):
         for index in range(len(vector)):
             self.vals[index] = self.vals[index] / vector.vals[index]
+    # lot more
+    def add_once(self, vector):
+        for index in range(len(self.vals)):
+            self.vals[index] = self.vals[index] + vector
+    def sub_once(self, vector):
+        for index in range(len(self.vals)):
+            self.vals[index] = self.vals[index] + vector
+    def multiply_once(self, vector):
+        for index in range(len(self.vals)):
+            self.vals[index] = self.vals[index] * vector
+    def div_once(self, vector):
+        for index in range(len(self.vals)):
+            self.vals[index] = self.vals[index] / vector
     # dot product
     def dot(self, vector):
         dot = 0
