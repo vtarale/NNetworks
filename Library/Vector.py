@@ -63,3 +63,5 @@ class Vector:
     def randomize_new(self, x: float, y: float, num):
         for index in range(len(num)):
             self.vals[index].append(random.uniform(x, y))
+    def copy(self):
+        return Vector(self.vals)

@@ -21,7 +21,7 @@ class Unit:
         return sigmoid(dot + self.bias)
     # correct
     def correct(self, error, inputs):
-        gradient = Vector(error.vals)
+        gradient = error.copy()
         gradient.multiply(error)
         gradient.multiply(inputs)
         gradient.multiply_once(self.learning_rate)
