@@ -1,3 +1,5 @@
+import random
+
 class Vector:
     def __init__(self, vals: list):
         self.vals = vals
@@ -41,3 +43,7 @@ class Vector:
         for index in range(len(vector)):
             dot += self.vals[index] * vector.vals[index]
         return dot
+    # extras
+    def randomize(self, x: float, y: float):
+        for index in range(len(self.vals)):
+            self.vals[index] = random.uniform(x, y)
