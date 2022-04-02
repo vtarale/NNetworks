@@ -60,3 +60,6 @@ class Vector:
     def randomize(self, x: float, y: float):
         for index in range(len(self.vals)):
             self.vals[index] = random.uniform(x, y)
+    def randomize_new(self, x: float, y: float, num):
+        for index in range(len(num)):
+            self.vals[index].append(random.uniform(x, y))

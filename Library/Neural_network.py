@@ -6,7 +6,7 @@ class Unit:
     def __init__(self, next: int, weigths, learning_rate, w=None):
         if not w:
             self.weigths = Vector([])
-            self.weigths.randomize(0, 3)
+            self.weigths.randomize_new(0, 3, next)
             return
         self.weigths = Vector(weigths)
         self.bias = random.uniform(0, 3)
