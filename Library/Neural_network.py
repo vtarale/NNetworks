@@ -13,7 +13,7 @@ class Perceptron:
         self.learning_rate = learning_rate
     # display weigths
     def display(self):
-        print(self.weigths.vals)
+        print(f"Weigths{self.weigths.vals}")
     # predict
     def predict(self, inputs: list):
         vector_in = Vector(inputs)
@@ -21,7 +21,6 @@ class Perceptron:
         return sigmoid(dot + self.bias)
     # correct
     def correct(self, error: float, inputs: Vector):
-        # bug
         gradient = inputs.copy()
         gradient.multiply_once(error)
         gradient.multiply_once(self.learning_rate)
