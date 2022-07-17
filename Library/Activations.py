@@ -3,8 +3,9 @@ import math
 # sigmoid function
 def sigmoid(x):
     # bug
-    val =  math.exp(1/1+(math.exp(-1*x)))
-    print(f"Sigmoid:{val}")
+    func = lambda x: .5 * (math.tanh(.5 * x) + 1)
+    val = func(x)
+    val = round(val, 2)
     return val
 
 # derivative of it
