@@ -2,7 +2,8 @@ import random
 
 class Vector:
     def __init__(self, vals: list):
-        self.vals = vals
+        extra = vals
+        self.vals = extra
     # some math operations
     def add_new(self, vector):
         new = []

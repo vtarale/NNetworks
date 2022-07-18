@@ -5,31 +5,32 @@ from Library.Vector import Vector
 
 print("Hello World")
 
-perceptron = brain.Perceptron(2, [], 0.5, False)
+perceptron = brain.Perceptron(2, [], 1, False)
 perceptron.display()
 
-count = 1
+gate = [[-1, -1], [-1, 1], [1, -1], [1, 1]]
 
-for i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]:
-    if count % 15 == 0:
-        # let's calculate the error and correct
-        prediction = perceptron.predict([i, i+5])
-        print(f"Prediction: {prediction}")
-        error = prediction - 1
-        print(f"Error: {error}")
+epochs = 500
+
+for epoch in range(epochs):
+    print(f"Epoch: {epoch}")
+    for g in gate:
+        if g[0] == -1 and g[1] == -1:
+            # correct and calculate error
+            prediction = perceptron.predict(g)
+            print(f"Prediction: {prediction}")
+            error = prediction-1
+        else:
+            # correct and calculate error
+            prediction = perceptron.predict(g)
+            print(f"Prediction: {prediction}")
+            error = prediction-0
+        error = round(error, 2)
+        print()
         if error != 0:
-            perceptron.correct(error, Vector([i, i+5]))
-    else: 
-        # let's calculate the error and correct
-        prediction = perceptron.predict([i, i-5])
-        print(f"Prediction: {prediction}")
-        error = prediction - 0.5
-        print(f"Error: {error}")
-        if error != 0:
-            perceptron.correct(error, Vector([i, i-5]))
+            print(f"Error: {error}")
+            perceptron.correct(error, Vector(g))
+    print()
 
-    perceptron.display()
-    count = count + 1
-
-prediction = perceptron.predict([2, 5])
+prediction = perceptron.predict([0, 0])
 print(f"Final Prediction: {prediction}")
