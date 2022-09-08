@@ -4,7 +4,7 @@ import random
 
 class Perceptron:
     def __init__(self, num: int, weigths: list, learning_rate: float, w: bool):
-        if not w:
+        if w:
             self.weigths = Vector([])
             self.weigths.randomize_new(0, 3, num)
         else:
