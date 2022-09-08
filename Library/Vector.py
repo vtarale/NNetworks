@@ -67,4 +67,5 @@ class Vector:
             value = random.uniform(x, y)
             self.vals.append(round(value, 2))
     def copy(self):
-        return Vector(self.vals)
+        extra = self.vals
+        return Vector(extra)
