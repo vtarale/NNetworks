@@ -1,1 +1,0 @@
-print("Thanks for using the NNetwrok library")
