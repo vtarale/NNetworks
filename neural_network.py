@@ -43,7 +43,7 @@ def predict(inputs: list):
     return final_prediction, answers
 
 def update():
-    # calculate answer the backpropogate
+    # calculate error, correct the backpropogate
     pass
 
 prediction, _ = predict([0, 0])
