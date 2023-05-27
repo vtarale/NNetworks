@@ -14,8 +14,8 @@ hidden_val = 4
 output_val  = 1
 inputs, ouput, hidden = [], [], []
 
-training_data = [[1, 1], [0, 1], [1, 0], [1, 0]]
-answer_data = [0, 1, 1, 0]
+training_data = [[1, 1], [-1, 1], [1, -1], [-1, -1]]
+answer_data = [-1, 1, 1, -1]
 
 hidden_weigths = [[random.uniform(0, 3), random.uniform(0, 3)], [random.uniform(0, 3), random.uniform(0, 3)], [random.uniform(0, 3), random.uniform(0, 3)], [random.uniform(0, 3), random.uniform(0, 3)]]
 print(hidden_weigths)
@@ -23,7 +23,7 @@ output_weights = [random.uniform(0, 3), random.uniform(0, 3), random.uniform(0, 
 print(output_weights)
 
 bias = 1
-learning_rate = 0.5
+learning_rate = 1
 
 
 # some functions
@@ -42,8 +42,8 @@ def predict(inputs: list):
 
     return final_prediction, answers
 
-def update():
+def update(prediction):
     # calculate error, correct the backpropogate
     pass
 
-prediction, _ = predict([0, 0])
+prediction, _ = predict([-1, -1])
